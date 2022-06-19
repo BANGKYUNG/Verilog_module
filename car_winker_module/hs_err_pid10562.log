@@ -1,0 +1,19 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0xbefecb) [0x7f2853771ecb]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(JVM_handle_linux_signal+0xd1) [0x7f2853778c81]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0xbead23) [0x7f285376cd23]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x14420) [0x7f28d3791420]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib/libjimage.so(+0x2759) [0x7f2852742759]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib/libjimage.so(+0x3674) [0x7f2852743674]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib/libjimage.so(JIMAGE_FindResource+0xc8) [0x7f2852743b48]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0x5bc27a) [0x7f285313e27a]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0x5b94bc) [0x7f285313b4bc]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0xd57abc) [0x7f28538d9abc]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0xd5847a) [0x7f28538da47a]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0xd59065) [0x7f28538db065]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0x673440) [0x7f28531f5440]
+/home/kkkk/tools/Xilinx/Vivado/2021.2/tps/lnx64/jre11.0.11_9/lib//server/libjvm.so(+0x85b904) [0x7f28533dd904]
+[0x7f283adbe44a]

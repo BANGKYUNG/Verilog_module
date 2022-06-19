@@ -1,0 +1,4 @@
+xvlog ./car_winker.v ./tb_car_winker.v
+xelab tb_car_winker -debug wave -s tb_car_winker
+#xsim tb_car_winker -R  # do not check waveform
+xsim tb_car_winker -gui -wdb simulate_xsim_tb_car_winker.wdb 
