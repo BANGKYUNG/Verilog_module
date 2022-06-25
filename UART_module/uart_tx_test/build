@@ -1,0 +1,3 @@
+xvlog ./uart_tx.v ./uart_tx_tb.v
+xelab uart_tx_tb -debug wave -s uart_tx_tb
+xsim uart_tx_tb -gui -wdb simulate_xsim_uart_tx_tb.wdb 
