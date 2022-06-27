@@ -1,5 +1,9 @@
+//작성자 : 방경민
+//모듈 역할 : UART TX 모듈 input Byte 값을 읽어 저장하는 모듈
+//설계 목표 : 비트단위를 clk를 활용하여 읽고 저장하여 모드를 변경
+
 `timescale 1ns/1ps
-//100Mhz /115200 baud rate
+//100Mhz /115200 baud rate , 입력 byte값을 읽어 저장하는 TX_module
 module TX_MODULE #(parameter BIT_CLK_PER = 868)
 (
   input  i_reset_n,
@@ -11,16 +15,16 @@ module TX_MODULE #(parameter BIT_CLK_PER = 868)
   output reg o_done
 );
 
-localparam standby_bit = 3'b000;
+localparam standby_bit = 3'b000; //RX 모듈에서 사용할 FSM 선언 (외부 변경X)
 localparam tx_start_bit= 3'b001;
 localparam tx_data_bit = 3'b010;
 localparam tx_stop_bit = 3'b011;
 
 
 reg [9:0] r_clk_cnt;
-reg [2:0] r_index;
-reg [2:0] r_c_status;
-reg [7:0] r_tx_data;
+reg [2:0] r_index; //DATA값 읽을때 사용할 인덱스
+reg [2:0] r_c_status; //Start , data, stop 비트 상태 저장
+reg [7:0] r_tx_data;  //데이터 순차 저장시 사용할 regi
 
 always@(posedge i_clk or negedge i_reset_n) begin 
   if(!i_reset_n) begin //초기화
@@ -28,6 +32,7 @@ always@(posedge i_clk or negedge i_reset_n) begin
     o_done <= 0;
   end else begin
     case(r_c_status)
+      //스탠바이 비트 동작
       standby_bit : begin
         o_tx_serial <= 1'b1;
         r_clk_cnt <= 0;
@@ -37,7 +42,7 @@ always@(posedge i_clk or negedge i_reset_n) begin
         o_tx_active <= 1;
         r_tx_data <= i_tx_byte;
         r_c_status <= tx_start_bit;
-        end else begin // 노이즈 발생할 수 있으니 스탠바이모드
+        end else begin // 노이즈 발생할 수 있으니 유지
           r_c_status <= standby_bit;
         end
       end
